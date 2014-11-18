@@ -1,0 +1,11 @@
+/* Empty. Add your own CSS if you like */
+
+.errortext {
+    color: red;
+    font-size: 30px;
+}
+
+#login_button, #register_button {
+    width: 100%;
+};
+
