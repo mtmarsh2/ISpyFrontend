@@ -1,12 +1,13 @@
 angular.module('starter.services', [])
 
+
 .factory('Classify', function($http)  {
   return {
     getDailySpot: function(inputs) {
-      
       $http.defaults.headers.common.Authorization = inputs['token'];
       return $http.get('http://104.131.103.91/classify/daily_spot/', inputs);
-    }
+    },
+
   }
 })
 

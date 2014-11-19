@@ -1,7 +1,7 @@
 <ion-view title="Dashboard">
   <ion-content class="padding">
     <h1>Dash</h1>
-    <p ng-show={{label_exists}}>{{label}}</p>
-    <img ng-show={{image_exists}} src = {{daily_image_url}} />
+    <p ng-show="label_exists">Today's Label: {{label}}</p>
+    <img ng-show="image_exists" src = {{daily_image_url}} />
   </ion-content>
 </ion-view>

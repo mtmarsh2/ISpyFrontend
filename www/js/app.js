@@ -65,6 +65,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       }
     })
 
+    .state('tab.classify', {
+      url: '/classify',
+      views: {
+        'tab-classify': {
+          templateUrl: 'templates/tab-classify.html',
+          controller: 'ClassifyCtrl'
+        }
+      }
+    })
+
     .state('tab.friends', {
       url: '/friends',
       views: {

@@ -11,6 +11,7 @@ angular.module('starter.controllers', [])
     Classify.getDailySpot(Auth.getUserCredentials())
         .success(function (data, status, headers, config) {
             console.log(data);
+            
             $scope.label = data['label'];
             $scope.daily_image_url = data['image_path'];
             $scope.label_exists = true;
@@ -45,6 +46,20 @@ angular.module('starter.controllers', [])
     }
 })
 
-.controller('LoginCtrl', function($scope) {
+.controller('ClassifyCtrl', function($scope) {
+    $scope.takePicture = function() {
+        $scope.image_taken = true;
+        navigator.camera.getPicture(onSuccess, onFail, { 
+            quality: 100,
+            destinationType: Camera.DestinationType.DATA_URL
+        });
+    };
+    function onSuccess(imageURI) {
+          console.log("it worked");
+          $scope.daily_image_url = imageURI;
+    };
+    function onFail(message) {
+          alert('Failed because: ' + message);
+    };
 
 });
